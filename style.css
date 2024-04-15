@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: rgb(188, 210, 252);
+}
+
+.card {
+    width: 640px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+}
+
+.card:hover {
+    transform: rotate(-5deg);
+}
+
+.card:hover .outside {
+    transform: rotateY(-130deg);
+}
+
+.outside,
+.inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+}
+
+.inside {
+    background: linear-gradient(
+        to right, #f7f7f7,
+        #ffffff 30% );
+    line-height: 3;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+}
+
+.outside {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    transform: rotateX(0deg);
+}
+
+.front {
+    background-color: #ffffff;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e0e0e0,
+    #ffffff 30%);
+}
+
+.cake {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+}
+
+.top-layer,
+.middle-layer,
+.bottom-layer {
+    height: 80px;
+    width: 240px;
+    background-repeat: repeat;
+    background-size: 60px 100px;
+    background-position: 28px 0;
+    background-image: linear-gradient(
+        transparent 50px,
+        #ffc4c4 50px,
+        #ffc4c4  40px,
+        transparent 60px
+    ),
+    radial-gradient(circle at 30px 5px, #789ce0
+    30px, #95bfff 31px);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: auto;
+}
+
+.middle-layer {
+    transform: scale(0.85);
+    top: 6px;
+}
+
+.top-layer {
+    transform: scale(0.7);
+    top: 26px;
+}
+
+.candle {
+    height: 45px;
+    width: 15px;
+    background: repeating-linear-gradient(
+        45deg,
+        #95adfd 0,
+        #aabdfc 5px,
+        #fdc6c0 5px,
+        #fdc6c0 10px
+    );
+    position: absolute;
+    left: 50%;
+    bottom: 202px;
+    margin-left: -7.5px;
+    z-index: 2;
+}
+
+.candle:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #ff6224;
+    border-radius: 0 50% 50% 50%;
+    bottom: 48px;
+    left: -1px;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+.inside {
+    background: linear-gradient(to right, #e0e0e0, #ffffff 30%);
+    line-height: 1.5; /* Menyamakan line height agar terlihat lebih rapi */
+    padding: 20px; /* Menambahkan padding agar isi lebih terpisah dari tepi */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+}
+
+.inside p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: x-large;
+    margin-top: 10px; /* Mengurangi margin top agar lebih dekat dengan elemen di atasnya */
+    color: #ff7a7a;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Mengurangi letter spacing agar terlihat lebih rapat */
+    text-transform: uppercase;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #000046;
+    animation: colorChange 5s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #8e8eff;
+    }
+    100% {
+        color: #fd9595;
+    }
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.inside h1 {
+    font-size: 48px;
+    color: #ff69b4;
+    margin-top: 10px; /* Mengurangi margin top agar lebih dekat dengan elemen di atasnya */
+    animation: heartbeat 1s infinite alternate;
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.inside h4 {
+    font-family: "Arial Rounded MT Bold";
+    font-size: larger;
+    margin-top: 2px; /* Mengurangi margin top agar lebih dekat dengan elemen di atasnya */
+    color: #000000;
+}
+
+
+.outside p {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #000046;
+    animation: colorChange 5s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #8e8eff;
+    }
+    100% {
+        color: #fd9595;
+    }
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
